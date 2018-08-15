@@ -1,0 +1,116 @@
+# Property: "distraction_cell" :
+# The choices avaliable are "LSTM_soft, LSTM_hard, LSTM_subtract, "GRU_soft, GRU_hard, GRU_subtract"
+# If the property is distraction is set true, then the choice given is used for the diversity cell. 
+# D1 model --> LSTM_hard
+# D2 model --> LSTM_soft
+
+distraction_cell = LSTM_soft
+
+# Property: "diff_vocab":
+# Whether the embedding matrix should be different for the encoder and decoder symbols.
+
+diff_vocab = False
+
+# Property: is_distraction:
+# Switch to turn off the distraction in the model
+
+is_distraction = True
+
+# Property: is_static:
+# Switch to turn off the attention module on query.
+
+is_query_static = False
+
+# Property: is_dynamic:
+# Switch to use dynamic rnn
+
+is_dynamic = False
+
+# Property: is_bidir:
+# Switch to use bidirectional rnn
+
+is_bidir = True
+
+# Property: same_cell:
+# Whether to use the same cell to encode the source and quey information
+
+same_cell = False
+
+# Property: embedding_size:
+# Embedding vector size
+
+embedding_size = 300
+
+# Property : hidden_size:
+# RNN cell size
+
+hidden_size = 400
+
+# Property: batch_size:
+# Batch size for training
+
+batch_size = 64
+
+# Property: num_epochs:
+# Number of maximum epochs
+
+max_epochs = 50
+
+# Property: Early stop:
+# Number of epochs for early stop criteria
+	
+early_stop = 10
+
+cell_encoder = GRU
+cell_decoder = GRU
+# Property: outdir:
+# Path to the output directory where the model and the predictions will be saved
+
+outdir = output_1_64_400_soft/
+
+# Property: working_dir:
+# Path to the folder that contains train/valid/test data
+
+working_dir = data/1/
+
+# Property: embedding_trainable:
+# Whether to fine tune the pretrained embedding
+
+embedding_trainable = True
+
+# Property: embedding_path:
+# Path to the pretrained embedding
+
+embedding_path = Embedding/
+
+#Property: limit_encode:
+# Frequency used as a cutoff for encoder vocab
+
+limit_encode = 0
+
+#Property limit_decode:
+# Frequency used as a cutoff for decoder vocab
+
+limit_decode = 0
+
+# Property: learning_rate:
+# Learning rate to be used for training.
+
+learning_rate = 0.0004
+
+# Property: max_sequence_length_content:
+# Maximum length of the source document allowed.
+
+max_sequence_length_content = 122
+
+# Property: max_sequence_length_title:
+# Maximum length of the summary to be predicted.
+
+max_sequence_length_title = 21
+
+# Property: max_sequence_length_query:
+# Maximum length of the query sentence allowed
+
+max_sequence_length_query = 22
+
+print_frequency = 1000
