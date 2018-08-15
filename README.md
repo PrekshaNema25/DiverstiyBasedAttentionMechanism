@@ -16,14 +16,16 @@ The implementation is based on [this](https://arxiv.org/abs/1704.08300) work.
 * [tensorflow_hub] (https://www.tensorflow.org/hub/modules/google/universal-sentence-encoder/1)
 
 ## Data Download and Preprocessing
-    * cd src/dataextraction_scripts
-    * The model will extract the data for the categories mentioned in file debatepedia_categories
-    * sh extract_data.sh
+* One data set split is already provided in data/ folder. 
+
+### To crawl the data from scratch :
+* cd src/dataextraction_scripts
+* The model will extract the data for the categories mentioned in file debatepedia_categories
+* sh extract_data.sh
+* python make_folds.py ../../data <number_of_folds> <new_dir_for_10_folds> 
+* By default run : python make_folds.py ../../data 10 ../../data
     
-    ### To use the existing extracted dataset in dataset folder:
-    * cd src/dataextraction_scripts
-    * python make_folds.py ../../data <number_of_folds> <new_dir_for_10_folds> 
-    * By default run : python make_folds.py ../../data 10 ../../data
+
 
 ## Get the Glove embeddings:
     mkdir Embedding
