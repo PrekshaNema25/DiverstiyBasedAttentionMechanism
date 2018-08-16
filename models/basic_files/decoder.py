@@ -263,6 +263,7 @@ def dynamic_distraction_decoder(config,
       
       else:
         x = linear([inp] + [a] , input_size, True)
+        distract_output = a
 
       cell_output, state = cell(x, state)
       
