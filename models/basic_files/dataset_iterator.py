@@ -12,6 +12,7 @@ from nltk.corpus import stopwords as sw
 import string
 import re
 import itertools
+random.seed(1357)
 
 def helper_function(content_file, summary_file, query_file, model):
     content = open(content_file).readlines()
