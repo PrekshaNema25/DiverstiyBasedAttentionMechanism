@@ -202,7 +202,6 @@ class run_model:
             _decoder_states_, attention_weights = sess.run([self.logits, self.attention_weights], feed_dict=feed_dict)
 
             attention_states = np.array([np.argmax(i,1) for i in attention_weights])
-            attention_states_query = np.array([np.argmax(i, 1) for i in attention_weights_query])
             # Pack the list of size max_sequence_length to a tensor
             decoder_states = np.array([np.argmax(i,1) for i in _decoder_states_])
 
