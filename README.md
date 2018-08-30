@@ -47,7 +47,7 @@ The implementation is based on [this](https://arxiv.org/abs/1704.08300) work.
      sh ./test.sh config.txt output/test_final_results
  
  ### If output/test_final_results, exists, just run the following command:
-    python postscripts/retreive.py $2
+    python postscripts/retreive.py output/test_final_results
 
 ## Universal Sentence Encoder:
 Including the USE embeddings for document and query sentences, helps in improving the model performance. 
