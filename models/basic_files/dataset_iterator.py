@@ -44,10 +44,10 @@ def helper_function(content_file, summary_file, query_file, model):
         s_without_sw = set(temp_s) - set(stopwords)
         q_without_sw = set(temp_q) -set(stopwords)
     
-        if len(c_without_sw) < 25:
+        if len(c_without_sw) < 20:
             continue
 
-        for k in range(12,25):
+        for k in range(10,18):
             new_c = []
             new_q = []
             new_s = []

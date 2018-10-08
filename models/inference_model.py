@@ -177,9 +177,11 @@ class BasicAttention:
         """
 
         optimizer = tf.train.AdamOptimizer(learning_rate)
-        train_op = optimizer.minimize(loss)
-        #self.grad = optimizer.compute_gradients(loss)
-        return train_op
+        #train_op = optimizer.minimize(loss)
+        grad = optimizer.compute_gradients(loss)
+        grad = [(tf.clip_by_value(grad, -1., 1.), var) for grad, var in grad ]
+	train_op = optimizer.apply_gradients(grad)
+	return train_op
 
 
 # To test the model
