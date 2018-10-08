@@ -70,7 +70,7 @@ outdir = output_soft/
 # Property: working_dir:
 # Path to the folder that contains train/valid/test data
 
-working_dir = new_data/2/
+working_dir = data/1/
 
 # Property: embedding_trainable:
 # Whether to fine tune the pretrained embedding
