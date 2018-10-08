@@ -17,6 +17,7 @@ The implementation is based on [this](https://arxiv.org/abs/1704.08300) work.
 
 ## Data Download and Preprocessing
 * One data set split is already provided in data/ folder. 
+* To make 10 folds from existing dataset use: python make_folds.py ../../all_points 10 ../../data
 
 ### To crawl the data from scratch :
 * cd src/dataextraction_scripts
