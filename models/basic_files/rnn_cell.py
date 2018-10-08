@@ -44,7 +44,7 @@ from __future__ import print_function
 
 import collections
 import math
-
+import sys
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops
@@ -263,7 +263,7 @@ class DistractionGRUCell_soft(RNNCell):
                                      self._num_units, True))
       new_h = u * state + (1 - u) * c
 
-      eps = 1e-13
+      eps = sys.float_info.min
       temp = math_ops.div(math_ops.reduce_sum(math_ops.mul(new_h, state),1), \
                           math_ops.reduce_sum(math_ops.mul(state,state),1) + eps)
 
@@ -309,7 +309,7 @@ class DistractionGRUCell_hard(RNNCell):
 
       new_h = u * state + (1 - u) * c
 
-      eps = 1e-13
+      eps = sys.float_info.min
       temp = math_ops.div(math_ops.reduce_sum(math_ops.mul(new_h, state), 1), \
                           math_ops.reduce_sum(math_ops.mul(state,state), 1) + eps)
 
@@ -557,7 +557,7 @@ class DistractionLSTMCell_soft(RNNCell):
                self._activation(j))
 
 
-      eps = 1e-13
+      eps = sys.float_info.min
       temp = math_ops.div(math_ops.reduce_sum(math_ops.mul(c, new_c),1),math_ops.reduce_sum(math_ops.mul(c,c),1) + eps)
 
       m = array_ops.transpose(sigmoid(g))
@@ -645,7 +645,7 @@ class DistractionLSTMCell_hard(RNNCell):
                self._activation(j))
 
 
-      eps = 1e-13
+      eps = sys.float_info.min
       temp = math_ops.div(math_ops.reduce_sum(math_ops.mul(c, new_c),1),math_ops.reduce_sum(math_ops.mul(c,c),1) + eps)
 
       dummy = array_ops.transpose(c)

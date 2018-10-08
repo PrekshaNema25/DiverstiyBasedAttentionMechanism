@@ -65,17 +65,17 @@ cell_decoder = GRU
 # Property: outdir:
 # Path to the output directory where the model and the predictions will be saved
 
-outdir = output/
+outdir = output_soft/
 
 # Property: working_dir:
 # Path to the folder that contains train/valid/test data
 
-working_dir = data/
+working_dir = new_data/2/
 
 # Property: embedding_trainable:
 # Whether to fine tune the pretrained embedding
 
-embedding_trainable = False
+embedding_trainable = True
 
 # Property: embedding_path:
 # Path to the pretrained embedding
